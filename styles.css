@@ -1,1 +1,12 @@
-/*This file is empty for now*/
+body {
+	font-family: sans-serif;
+
+	background-color: lightpink;
+
+	display: flex;
+	justify-content: center;
+}
+
+h2 {
+	font-style: italic;
+}
