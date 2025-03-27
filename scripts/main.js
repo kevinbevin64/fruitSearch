@@ -53,6 +53,11 @@ function getElement(elementType) {
 function giveListItemFromText(text) {
 	let newListItem = document.createElement("li");
 	newListItem.innerHTML = text;
+	if (text == "watermelon") {
+		// newListItem.style.backgroundColor = "#71A95A";
+		// newListItem.style.color = "#71A95A";
+		newListItem.style.color = "#007944";
+	}
 	return newListItem;
 }
 
