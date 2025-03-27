@@ -19,8 +19,8 @@ let searchTerms = ["apple", "banana", "orange", "pear", "grape", "pineapple", "m
 
 let lastSearch = "";
 
-// let button = getElement("button");
-// button.addEventListener("click", buttonClickFunction);
+let button = getElement("button");
+button.addEventListener("click", buttonClickFunction);
 let inputBox = getElement("input");
 inputBox.addEventListener("input", enterDownFunction);
 
