@@ -17,35 +17,36 @@ let searchTerms = ["apple", "banana", "orange", "pear", "grape", "pineapple", "m
 "cacao", "coffee cherry", "cupuacu", "date plum", "eggfruit", "ilama", "imbe", "jabuticaba", "lúcuma", "monstera",
 "nance", "pandanus", "pili nut", "pitomba", "safou", "santol", "soursop", "tucumã", "voavanga", "wood apple"];
 
+let lastSearch = "";
 
-let button = getElement("button");
-button.addEventListener("click", buttonClickFunction);
+// let button = getElement("button");
+// button.addEventListener("click", buttonClickFunction);
 let inputBox = getElement("input");
-inputBox.addEventListener("keydown", enterDownFunction);
+inputBox.addEventListener("input", enterDownFunction);
 
 function enterDownFunction(keypress) { 
-	if (keypress.key == "Enter") {
-		buttonClickFunction();
-	}
-
 	buttonClickFunction();
 }
 
 function buttonClickFunction() {
-	console.log("Button was clicked!");
-
-	let searchResults = giveSearchResults(valueInTextBox()); // The search results in HTML fragment form
-
-	drawSearchResults(searchResults);
+	// console.log("Button was clicked!");
+	if (valueInTextBox() == "") {
+		let parent = getElement("ol");
+		parent.innerHTML = "";
+	} else {
+		let searchResults = giveSearchResults(valueInTextBox()); // The search results in HTML fragment form
+		drawSearchResults(searchResults);
+	}
 }
 
 function valueInTextBox() {
-	console.log("The value inside the text box was " + getElement("input").value);
-	return getElement("input").value;
+	console.log("The value inside the text box was (" + getElement("input").value + ")");
+	console.log("The length of the text box was (" + getElement("input").value.length + ")");
+	return getElement("input").value.toLowerCase();
 }
 
 function getElement(elementType) {
-	console.log("Getting element: " + elementType);
+	// console.log("Getting element: " + elementType);
 	return document.querySelector(elementType);
 }
 
